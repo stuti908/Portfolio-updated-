@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.fade-wrapper {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

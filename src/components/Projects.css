@@ -1,0 +1,69 @@
+.projects {
+  background-color: #fdfafa;
+  color: rgb(10, 10, 10);
+  padding: 3rem 2rem;
+
+}
+
+.projects h2 {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 570px;
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 12px; 
+  padding: 2rem;
+  scroll-padding: 0 50%; 
+  scrollbar-color: #c0babae0 transparent;
+  scrollbar-width: thin;
+  perspective: 1000px;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.carousel-card {
+  scroll-snap-align: center;
+  flex: 0 0 280px;
+  background: linear-gradient(to bottom, #141427, #f04e3e);
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: #fff;
+  text-align: left;
+  font-size: 0.95rem;
+  height: 320px;
+  opacity: 0.4;
+  transform: scale(0.85) rotateY(10deg);
+  filter: blur(1.5px);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-card:hover {
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
+  filter: blur(0);
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-container:has(.carousel-card:hover) .carousel-card:not(:hover) {
+  opacity: 0.2;
+  transform: scale(0.75) rotateY(15deg);
+  filter: blur(3px);
+}
