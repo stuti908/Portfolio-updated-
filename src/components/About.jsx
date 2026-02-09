@@ -4,14 +4,11 @@ import "./About.css";
 const About = () => {
   return (
     <section className="about-section">
-
       <div className="about-container">
 
         {/* Left Side */}
         <div className="about-left">
-          <h2>About Me</h2>
-
-          <p className="about-intro">
+                   <p className="about-intro">
             Hi, I'm Ekta Sajwan — a Software Developer passionate about
             building smart and scalable solutions.
           </p>
@@ -40,12 +37,14 @@ const About = () => {
             <span>React.js</span>
             <span>Node.js</span>
             <span>MongoDB</span>
-            <span>UI/UX Design</span>
-          </div>
+            <span>Figma</span>
+            <span>Adobe</span>
+            <span>Visio</span>
+            <span>Python</span>
+            </div>
         </div>
 
       </div>
-
     </section>
   );
 };

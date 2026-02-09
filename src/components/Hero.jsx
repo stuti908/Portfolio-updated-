@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="dropdown-menu">
           <p onClick={() => navigate("/Projects")}>Projects</p>
           <p onClick={() => navigate("/Contact")}>Contact</p>
-          <p onClick={() => navigate("\public\resume.pdf")}>Resume</p>
+          <p onClick={() => navigate("/public/resume.pdf")}>Resume</p>
           <p onClick={() => navigate("/HireForm")}>web-Designs</p>
         </div>
       )}
@@ -76,7 +76,7 @@ const Hero = () => {
         className="contact-btn"
         onClick={() => navigate("/Contact")}
       >
-        Contact Me →
+      <b><b>Contact Me →</b></b>  
       </button>
 
     </section>

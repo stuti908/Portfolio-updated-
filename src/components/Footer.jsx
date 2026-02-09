@@ -7,10 +7,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section about">
-          <h3>EKTA SAJWAN</h3>
           <p>
-            I'm a  web developer skilled in React and frontend technologies , industrial exp in R&D Software developer trainee . 
-           
+           Software Developer with expertise in C, Python, and frontend development, backed by R&D industry experience delivering smart and scalable solutions.
           </p>
         </div>
 
