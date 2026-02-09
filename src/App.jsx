@@ -39,4 +39,3 @@ function App() {
 }
 
 export default App;
-// 12578u8438u84
