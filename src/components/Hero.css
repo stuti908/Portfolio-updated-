@@ -54,12 +54,12 @@
   position: absolute;
   top: 70px;
   left: 50px;
-  background: #fdf6ec;   /* soft creamy */
+  background: #f8f8f8e0;  
   padding: 12px 20px;
-  border-radius: 25px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-radius: 0px 25px 25px 0px;
+  box-shadow: 0 8px 20px rgb(0, 0, 0);
   display: flex;
-  gap: 25px;
+  gap: 15px;
   align-items: center;
   transition: 0.3s ease;
   z-index: 100;

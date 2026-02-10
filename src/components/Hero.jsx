@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope, FaBars } from "react-icons/fa";
 import "./Hero.css";
@@ -7,7 +7,7 @@ const Hero = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const words = [" Software", "Developer"];
+  const words = useMemo(() => ["Software", "Developer"], []);
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -15,24 +15,31 @@ const Hero = () => {
     if (index < words.length) {
       const timeout = setTimeout(() => {
         setText((prev) => prev + (prev ? " " : "") + words[index]);
-        setIndex(index + 1);
+        setIndex((prev) => prev + 1);
       }, 400);
+
       return () => clearTimeout(timeout);
     }
-  }, [index]);
+  }, [index, words]);
+
+  const scrollToProjects = () => {
+    window.scrollTo({ top: 900, behavior: 'smooth' });
+  };
+   const scrollToContact = () => {
+    window.scrollTo({ top: 1200, behavior: 'smooth' });
+  };
 
   return (
     <section className="hero">
-
       {/* Top Nav */}
       <div className="top-nav">
-
-        {/* Hamburger Icon */}
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
           <FaBars />
         </div>
 
-        {/* Social Icons */}
         <div className="nav-icons">
           <a href="https://github.com/stuti908" target="_blank" rel="noreferrer">
             <FaGithub />
@@ -40,7 +47,11 @@ const Hero = () => {
           <a href="mailto:ektasajwan121@gmail.com">
             <FaEnvelope />
           </a>
-          <a href="https://www.linkedin.com/in/Ekta-Sajwan" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/Ekta-Sajwan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin />
           </a>
         </div>
@@ -49,10 +60,30 @@ const Hero = () => {
       {/* Dropdown Menu */}
       {menuOpen && (
         <div className="dropdown-menu">
-          <p onClick={() => navigate("/Projects")}>Projects</p>
-          <p onClick={() => navigate("/Contact")}>Contact</p>
-          <p onClick={() => navigate("/public/resume.pdf")}>Resume</p>
-          <p onClick={() => navigate("/HireForm")}>web-Designs</p>
+          <p onClick={scrollToProjects}>Projects</p>
+
+          <p onClick={scrollToContact}>Contact</p>
+
+          <p
+            onClick={() => {
+              window.open("/EktaSajwanResume.pdf", "_blank");
+              setMenuOpen(false);
+            }}
+          >
+            Resume
+          </p>
+
+          <p
+            onClick={() => {
+              window.open(
+                "https://www.figma.com/design/W7L73DZ35bQVnbNHfArUS0/Untitled",
+                "_blank"
+              );
+              setMenuOpen(false);
+            }}
+          >
+            Web Designs
+          </p>
         </div>
       )}
 
@@ -60,9 +91,8 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1>
-            Hey Viewer's, <br />
-            I am a
-            <span className="highlight">{text}</span>
+            Hey Viewers, <br />
+            I am a <span className="highlight">{text}</span>
           </h1>
 
           <p>
@@ -71,14 +101,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Contact Button */}
       <button
         className="contact-btn"
-        onClick={() => navigate("/Contact")}
+        onClick={scrollToContact}
       >
-      <b><b>Contact Me →</b></b>  
+        Contact Me →
       </button>
-
     </section>
   );
 };

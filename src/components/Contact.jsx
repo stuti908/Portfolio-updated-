@@ -29,12 +29,11 @@ const Contact = () => {
   };
 
   return (
-  <section className="contact-section">
-    <div className="contact-box">
+    <div className="contact-container">
       {isSent ? (
         <div className="sent-confirmation">
           <FaCheckCircle className="sent-icon" />
-          <p>Message Sent Successfully!</p>
+          <p>Message Sent!</p>
         </div>
       ) : (
         <>
@@ -44,13 +43,13 @@ const Contact = () => {
             <input type="email" name="email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit">
-              Send <FaPaperPlane />
+              Send <FaPaperPlane style={{ marginLeft: '8px' }} />
             </button>
           </form>
         </>
       )}
     </div>
-  </section>
-);
-}
+  );
+};
+
 export default Contact;

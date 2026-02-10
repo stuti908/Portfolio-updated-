@@ -1,42 +1,77 @@
-import React from 'react';
-import './Footer.css';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import React from "react";
+import "./Footer.css";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section about">
+      <div className="footer-container">
+        
+        {/* About */}
+        <div className="footer-section">
+          <h3>About Me</h3>
           <p>
-           Software Developer with expertise in C, Python, and frontend development, backed by R&D industry experience delivering smart and scalable solutions.
+            Software Developer with expertise in C, Python, and frontend
+            development, backed by R&D industry experience delivering smart and
+            scalable solutions.
           </p>
         </div>
 
-        <div className="footer-section contact">
-          <h4>Contact Info</h4>
-          <p><FaEnvelope /> ektasajwan121@gmail.com</p>
-          <p><FaPhoneAlt /> +91 9548277638</p>
-          <p><FaMapMarkerAlt /> Dehradun, Uttarakhand, India</p>
+        {/* Contact */}
+        <div className="footer-section">
+          <h3>Contact</h3>
+          <p>
+            <FaEnvelope />{" "}
+            <a href="mailto:ektasajwan121@gmail.com">
+              ektasajwan121@gmail.com
+            </a>
+          </p>
+          <p>
+            <FaPhoneAlt />{" "}
+            <a href="tel:+919548277638">
+              +91 9548277638
+            </a>
+          </p>
+          <p>
+            <FaMapMarkerAlt /> Dehradun, Uttarakhand, India
+          </p>
         </div>
 
-        <div className="footer-section social">
-          <h4>Follow Me</h4>
+        {/* Social */}
+        <div className="footer-section">
+          <h3>Follow Me</h3>
           <div className="social-icons">
-            <a href="https://github.com/stuti908" target="_blank" rel="noopener noreferrer">
-              <FaGithub style={{ color: '#333' }} />
+            <a
+              href="https://github.com/stuti908"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/Ekta-Sajwan" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin style={{ color: '#0077b5' }} />
+
+            <a
+              href="https://www.linkedin.com/in/Ekta-Sajwan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
             </a>
+
             <a href="mailto:ektasajwan121@gmail.com">
-              <FaEnvelope style={{ color: '#d44638' }} />
+              <FaEnvelope />
             </a>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2025 EKTA SAJWAN. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Ekta Sajwan. All rights reserved.</p>
       </div>
     </footer>
   );
