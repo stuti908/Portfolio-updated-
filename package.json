@@ -41,5 +41,18 @@
   },
   "devDependencies": {
     "parcel": "^2.14.4"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuti908/Portfolio-updated-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stuti908/Portfolio-updated-/issues"
+  },
+  "homepage": "https://github.com/stuti908/Portfolio-updated-#readme",
+  "description": ""
 }
